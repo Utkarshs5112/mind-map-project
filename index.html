@@ -1,63 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
-        <link rel="stylesheet" href="css/style.css">    
-    <title>Mind Map</title>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style2.css">
+  <title>intropage</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
-<body>
-    <div>
-        <div class="heading"><h1>Hello Wonderful Mind</h1></div>
-        <div class="section">
-            <div id ="desc"><p>In the dimly lit streets of Victorian London, a thick fog envelops the city, casting a mysterious aura over its cobblestone pathways. The gas lamps flicker uncertainly, barely illuminating the shadowy figures that navigate through the mist. In the heart of Baker Street, 221B, an iconic address known to many as the residence of the world's greatest detective, Sherlock Holmes, a urgent message awaits.
-
-                As you approach the door, a neatly folded letter addressed to you is slipped under the threshold. Unfolding the parchment reveals the unmistakable scrawl of Mr. Holmes himself. The ink bears the weight of urgency as the detective requests your presence at his esteemed residence.
-                
-                "Dear [Your Name],
-                
-                A matter of great importance has arisen, and I find myself in need of a keen intellect and a sharp set of eyes. Your reputation precedes you, and I believe you possess the qualities necessary for the task at hand. A peculiar case has presented itself, shrouded in enigma and perplexity.
-                
-                I implore you to join me at 221B Baker Street with utmost haste. The game is afoot, and only together can we unravel the mysteries that linger in the murky corners of London.
-                
-                Yours sincerely,
-                Sherlock Holmes"
-                
-                With curiosity piqued and a sense of adventure calling, you find yourself drawn into the intricate world of deduction and intrigue. As you step through the door of 221B Baker Street, the game begins, and the fate of London rests in your hands.</p></div>    
-            <div class="switch1">
-                <div class="log"><a href="#" onclick="showLogin()">login</a></div>
-                <div class="log"><a href="#" onclick="showSignUp()">sign-up</a></div>
-                
-            </div>
+<body >
+  <div class="seperater">
+    <div class="image">
+        <img src = "css/images/My first design.png">    
+      </div>
+  <div class="section">
+    <div class = "position-absolute bottom-0 end-0 m-3">
             
-           
-        <form id="loginForm" style="display:none;">
-            <label for="loginUsername">Username:</label>
-            <input type="text" id="loginUsername" name="loginUsername" required>
-        
-            <label for="loginPassword">Password:</label>
-            <input type="password" id="loginPassword" name="loginPassword" required>
-        
-            <div class="b2"><button type="submit">Login</button></div>
-        
-        </form>
-        
-        <form id="signupForm" style="display:none;">
-            <label for="signupUsername">Username:</label>
-            <input type="text" id="signupUsername" name="signupUsername" required>
-        
-            <label for="signupPassword">Password:</label>
-            <input type="password" id="signupPassword" name="signupPassword" required>
-        
-            <div class="b2"><button type="submit">Sign Up</button></div>
-        
-        </form>
-        
+      <button class="btn btn-dark shadow" id="btnSwitch">Toggle Mode</button>
+  </div>
+    <div class="heading"><h1>Sherlocking <br>it up </h1></div>
+    <div class ="desc"><p>In the dimly lit streets of Victorian London, a thick fog envelops the city, casting a mysterious aura over its cobblestone pathways. The gas lamps flicker uncertainly, barely illuminating the shadowy figures that navigate through the mist. In the heart of Baker Street, 221B, an iconic address known to many as the residence of the world's greatest detective, Sherlock Holmes, a urgent message awaits.
 
-        <button id = "darkmode">LIGHT</button>
-        <script src = "./js/script.js"> </script>
+        As you approach the door, a neatly folded letter addressed to you is slipped under the threshold. Unfolding the parchment reveals the unmistakable scrawl of Mr. Holmes himself. The ink bears the weight of urgency as the detective requests your presence at his esteemed residence.
+      </p>
+    
+    <div class="starter"><button >let's get started</button></div></div>    
         </div>
-    </div>
+    </div>  
+    </div>  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+<script src = "script.js"></script> 
+  
 </body>
 </html>
