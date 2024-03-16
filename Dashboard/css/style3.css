@@ -1,0 +1,255 @@
+@font-face {
+    font-family:quin ;
+    src: url('./fonts/QAIRO.ttf');
+}
+@font-face {
+    font-family: he;
+    src: url('./fonts/HaarlemSerif.otf');
+}
+@font-face {
+    font-family: be;
+    src: url('./fonts/BroncoPersonalUse.ttf');
+}
+@font-face {
+    font-family: bru;
+    src: url(./fonts/Bebrush.otf);
+}
+body{
+    background-color: white;
+    overflow-x: hidden;
+    
+    
+}
+.heading{
+    height:70px;
+    display:flex;
+    justify-content:flex-start;
+    background-color: rgb(158, 244, 228);
+    margin-bottom: 0;
+    margin-top: 0;
+}
+.heading2{
+    height:50px;
+    margin-top: 40px;
+    text-align: start;
+    font-size: large;
+    padding-left: 50px;
+    margin-bottom: 0;
+}
+
+.head-center{
+    margin-top: 0;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: bru ;
+    font-size: large;
+    color:rgb(60, 42, 3);
+}
+
+.col-3{
+    background-color: burlywood;
+    background-image: url("./images/brownpage.png");
+    width: 15%;
+    margin-bottom: 0;
+    height: 130vh;
+    background-size: cover;
+    margin-top: 0px;
+}
+.col-10{
+    width: 1275px;
+    background-size:cover;
+    margin-left: 0;
+    margin-right:0;
+    margin-top: 0px;
+    max-width: 100%;
+    background-image: url("./images/whiteboard.png");
+
+}
+.Dashboard{
+    
+    font-size: 10px;
+    font-family:he;
+    font-size: xx-small;
+    text-align: start;
+    margin-top: 20px;
+    font: white;
+    margin-right: 15px;
+    
+}
+.b1{
+    text-align: center;
+    margin-left: 0px;
+    border-bottom: 2px solid black;
+}
+.b{
+    margin-right: 0;
+    font-family: be;
+    width: 215px;
+    height: 50px;
+    background-color: rgb(230, 169, 14);
+    border: 1px solid black;
+    border-radius: 4px;
+
+}
+
+.b:hover{
+    background-color: rgb(198, 196, 196);
+}
+.bottombuttom{
+    margin-right: 450px;
+
+}
+.b2{
+    margin-top: 70px;
+    font-family: be;
+    width: 215px;
+    height: 25px;
+    background-color: rgba(14, 230, 86, 0.82);
+    border: 1px solid black;
+    border-radius: 4px;
+
+}
+.b2:hover{
+    background-color: rgb(87, 87, 230);
+}
+.b3{
+    font-family: be;
+    color: aliceblue;
+    margin-right: 0;
+    border: 1px;
+    width: 215px;
+    height: 50px;
+    background-color:rgb(124,90,5);
+    border: 1px solid black;
+    border-radius: 4px;
+
+}
+
+.contents{
+    display: block;
+    padding-left: 50px;
+    font-size: large;
+    height: 800px;
+    width: 850px;
+    font-family: quin bold;
+    padding-right: 50px;
+    overflow: auto;
+}
+.contents::-webkit-scrollbar {
+    width: 2px; /* Width of the scrollbar */
+}
+
+/* Track */
+.contents::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Color of the track */
+}
+
+/* Handle */
+.contents::-webkit-scrollbar-thumb {
+    background: #888; /* Color of the scrollbar handle */
+}
+
+/* Handle on hover */
+.contents::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Color of the scrollbar handle on hover */
+}
+.container {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    
+  }
+  
+  .toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  .toggle-checkbox {
+    display: none;
+  }
+  
+  .toggle-label {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    border-radius: 34px;
+    transition: background-color 0.3s;
+  }
+  
+  .toggle-label:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.3s;
+  }
+  
+  .toggle-checkbox:checked + .toggle-label {
+    background-color: #1e1f20;
+  }
+  
+  .toggle-checkbox:checked + .toggle-label:before {
+    transform: translateX(26px);
+  }
+  
+  .circle {
+    width: 50px; /* Adjust size as needed */
+    height: 50px; /* Adjust size as needed */
+    background-color: rgb(20, 18, 18); /* Color of the circle */
+    border-radius: 50%; /* Makes the element a circle */
+    position: absolute; /* Positions the circle relative to its containing element */
+    margin-top: 10px; /* Places the circle at the top of its containing element */
+    right: 0px;
+    margin-left: auto;
+}
+.popup {
+    display: none;
+    position: absolute;
+    top: calc(100% + 5px); /* Position below the button */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%);
+    background-color: white;
+    padding: 10px;
+    border: 1px solid black;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 2px solid #ddd; /* Border around the table */
+}
+
+/* Style for table header cells */
+th {
+    background-color: #f2f2f2; /* Background color of header cells */
+    border: 1px solid #ddd; /* Border for header cells */
+    padding: 8px; /* Padding for header cells */
+    text-align: left; /* Alignment of text in header cells */
+}
+
+/* Style for table data cells */
+td {
+    border: 1px solid #ddd; /* Border for data cells */
+    padding: 8px; /* Padding for data cells */
+}
+
+/* Style for even rows */
+tr {
+    background-color: #f9f9f9; /* Background color for even rows */
+}

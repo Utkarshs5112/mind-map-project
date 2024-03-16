@@ -1,0 +1,44 @@
+.formcontainer
+{
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    margin-top: 200px;
+}
+.formfield
+{
+    width:250px;
+    height:50px;
+    border-radius:3px;
+    border:1px solid #6c757d;
+    padding-left: 10px;
+}
+
+#mossage
+{
+    margin-top:20px;
+    color:black;
+}
+#summit
+{
+    width:262px;
+    height:50px;
+    margin-top:5px;
+    border-radius:3px;
+    background-color:blanchedalmond;
+}
+body{
+    background-color: #dee2e6;
+}
+#btnSwitch .form-check-input:checked + .form-check-label::before {
+    background-color: black !important; /* Set circle color to black when checked */
+}
+
+#btnSwitch .form-check-input:checked + .form-check-label::after {
+    background-color: white !important; /* Set background color to white when checked */
+}
+.formfield::placeholder
+{
+    padding-left:15px;
+}

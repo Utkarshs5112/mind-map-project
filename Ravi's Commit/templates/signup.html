@@ -10,13 +10,15 @@
 <body>
     <div class = "formcontainer">
         <div>
-        <h2 id = "pls">Please sign in</h2>
+        <h2 id = "pls">Sign up</h2>
         </div>
         <div>
-        <form>
-            <input type = "text" class = "formfield" placeholder="Enter Email Address" id = "email" name = "email"><br>
+        <form action = "/signup" id = "demo-form" method = "POST">
+            <input type = "text" class = "formfield" placeholder="Enter Username" id = "username" name = "username"><br>
             <input type = "password" class = "formfield" placeholder="Enter password" id = "password" name = "password"><br>
-        </form>
+            <button type = "submit" id = "summit">SIGN UP</button>
+            </form>
+            <script src = "static/js/script.js"></script>
     </div>
     </div>
 </body>
