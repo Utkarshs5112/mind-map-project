@@ -1,45 +1,50 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Meta tags for character set and viewport -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Title of the page -->
     <title>Bootstrap demo</title>
-    <link rel="stylesheet" href = "static/css/styles.css">
-
+    <!-- Linking custom CSS styles -->
+    <link rel="stylesheet" href="static/css/styles.css">
+    <!-- Linking Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   </head>
   <body>
+    <!-- Main container -->
     <div class="container-fluid p-0">
-
-    <div class="row no-gutters">
-      <div class="col-md-6 left px-0">
-        <img class = "img-fluid"  src ="static/images/sherlock.jpg">
-      </div>
-      <div class="col-md-6 right px-0">
-        <h1 class = "text-center header">Sherlock Holmes' Clue Tracker
-        </h1>
-
-        <p class = "text-start material px-4"> Step into the shoes of Sherlock Holmes in "The Artwork Heist Unveiled." Engage in a riveting investigation set in the atmospheric backdrop of Victorian London. As Holmes, you meticulously collect clues, from subtle hints to overlooked details, to uncover the truth behind a daring artwork theft. Utilize the web-based "Clue Tracker" to organize and analyze evidence, piecing together the puzzle of the heist. Navigate through a labyrinth of deceit and deception, where every twist and turn leads closer to unraveling the mystery. With keen observation and deductive reasoning, follow Holmes's footsteps to unveil the truth behind the crime. Are you ready to embark on a thrilling adventure and prove yourself as a master detective? The game is afoot!</p>
-        <div class = "text-center">
-        <button class = "btn btn-primary lessgo" href = "http://127.0.0.1:5000/authenticate" id = "startButton" type ="button">LETS GET STARTED</button>
-      </div>
-      <div class = "position-absolute bottom-0 end-0 m-3">
-         <!--   <div class = "form-check form-switch" id = "btnSwitch">
-          <input type="checkbox" class="form-check-input" id = "toggleSwitch">
-          <label class="form-check-label" for="toggleSwitch"></label>
-        </div>-->   
-     
-        <div class="toggle-switch" id = "btnSwitch">
-          <input type="checkbox" id="color-toggle" class="toggle-checkbox">
-          <label for="color-toggle" class="toggle-label"></label>
+      <!-- Row with no gutters -->
+      <div class="row no-gutters">
+        <!-- Left column with Sherlock image -->
+        <div class="col-md-6 left px-0">
+          <img class="img-fluid" src="static/images/sherlock.jpg">
         </div>
-    </div>
+        <!-- Right column with header, paragraph, and button -->
+        <div class="col-md-6 right px-0">
+          <!-- Header -->
+          <h1 class="text-center header">Sherlock Holmes' Clue Tracker</h1>
+          <!-- Paragraph -->
+          <p class="text-start material px-4">Step into the shoes of Sherlock Holmes in "The Artwork Heist Unveiled." Engage in a riveting investigation set in the atmospheric backdrop of Victorian London. As Holmes, you meticulously collect clues, from subtle hints to overlooked details, to uncover the truth behind a daring artwork theft. Utilize the web-based "Clue Tracker" to organize and analyze evidence, piecing together the puzzle of the heist. Navigate through a labyrinth of deceit and deception, where every twist and turn leads closer to unraveling the mystery. With keen observation and deductive reasoning, follow Holmes's footsteps to unveil the truth behind the crime. Are you ready to embark on a thrilling adventure and prove yourself as a master detective? The game is afoot!</p>
+          <!-- Button to start -->
+          <div class="text-center">
+            <button class="btn btn-primary lessgo" href="http://127.0.0.1:5000/authenticate" id="startButton" type="button">LETS GET STARTED</button>
+          </div>
+          <!-- Toggle switch -->
+          <div class="position-absolute bottom-0 end-0 m-3" id="btnSwitch">
+            <div class="toggle-switch">
+              <input type="checkbox" id="color-toggle" class="toggle-checkbox">
+              <label for="color-toggle" class="toggle-label"></label>
+            </div>
+          </div>
+        </div>
       </div>
-      </div>
     </div>
+    <!-- Bootstrap and Popper.js scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
-<script src = "static/js/script.js"></script>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <!-- Custom JavaScript -->
+    <script src="static/js/script.js"></script>
+  </body>
 </html>

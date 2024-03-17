@@ -1,81 +1,100 @@
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
+<head>
     <meta charset="UTF-8">
     <title> Login and Registration Form in HTML & CSS | CodingLab </title>
+    <!-- Link to your custom CSS file -->
     <link rel="stylesheet" href="static/css/style.css">
     <!-- Fontawesome CDN Link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   </head>
+</head>
 <body>
   <div class="container">
+    <!-- Checkbox for flip animation -->
     <input type="checkbox" id="flip">
     <div class="cover">
+      <!-- Front side of the card -->
       <div class="front">
+        <!-- Image and text for the front side -->
         <img src="https://static.independent.co.uk/s3fs-public/thumbnails/image/2014/01/19/19/27-Sherlock-BBC.jpg" alt="">
         <div class="text">
           <span class="text-1">Welcome to the world of <br> Sherlock Holmes!</span>
           <span class="text-2">Let's get started</span>
         </div>
       </div>
+      <!-- Back side of the card -->
       <div class="back">
         <!--<img class="backImg" src="images/backImg.jpg" alt="">-->
+        <!-- Text for the back side -->
         <div class="text">
           <span class="text-1">Complete miles of journey <br> with one step</span>
           <span class="text-2">Let's get started</span>
         </div>
       </div>
     </div>
+    <!-- Login and Signup forms -->
     <div class="forms">
+        <!-- Login form -->
         <div class="form-content">
           <div class="login-form">
             <div class="title">Login</div>
-          <form action="/authenticate" method = "POST">
-            <div class="input-boxes">
-              <div class="input-box">
-                <i class="fas fa-envelope"></i>
-                <input type="text" name = "login_username" placeholder="Enter your email address" required>
+            <!-- Form for login -->
+            <form action="/authenticate" method="POST">
+              <div class="input-boxes">
+                <!-- Input box for email -->
+                <div class="input-box">
+                  <i class="fas fa-envelope"></i>
+                  <input type="text" name="login_username" placeholder="Enter your email address" required>
+                </div>
+                <!-- Input box for password -->
+                <div class="input-box">
+                  <i class="fas fa-lock"></i>
+                  <input type="password" name="login_password" placeholder="Enter your password" required>
+                </div>
+                <!-- Error message -->
+                <div>
+                  {% if error %}
+                  <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                  </div>
+                  {% endif %}
+                </div>
+                <!-- Submit button -->
+                <div class="button input-box">
+                  <input type="submit" value="Submit">
+                </div>
+                <!-- Signup link -->
+                <div class="text sign-up-text">Don't have an account? <label for="flip">Signup now</label></div>
               </div>
-              <div class="input-box">
-                <i class="fas fa-lock"></i>
-                <input type="password" name = "login_password" placeholder="Enter your password" required>
+            </form>
+          </div>
+          <!-- Signup form -->
+          <div class="signup-form">
+            <div class="title">Signup</div>
+            <!-- Form for signup -->
+            <form action="/authenticate" method="POST">
+              <div class="input-boxes">
+                <!-- Input box for name -->
+                <div class="input-box">
+                  <i class="fas fa-user"></i>
+                  <input type="text" name="signup_username" placeholder="Enter your name" required>
+                </div>
+                <!-- Input box for password -->
+                <div class="input-box">
+                  <i class="fas fa-lock"></i>
+                  <input type="password" name="signup_password" placeholder="Enter your password" required>
+                </div>
+                <!-- Submit button -->
+                <div class="button input-box">
+                  <input type="submit" value="Submit">
+                </div>
+                <!-- Login link -->
+                <div class="text sign-up-text">Already have an account? <label for="flip">Login now</label></div>
               </div>
-              <div>
-                {% if error %}
-                <div class="alert alert-danger" role="alert">
-        {{ error }}
-    </div>
-    {% endif %}
-              </div>
-              <div class="text"><a href="#">Forgot password?</a></div>
-              <div class="button input-box">
-                <input type="submit" value="Sumbit">
-              </div>
-              <div class="text sign-up-text">Don't have an account? <label for="flip">Sigup now</label></div>
-            </div>
-        </form>
-      </div>
-        <div class="signup-form">
-          <div class="title">Signup</div>
-        <form action="/authenticate" method = "POST">
-            <div class="input-boxes">
-              <div class="input-box">
-                <i class="fas fa-user"></i>
-                <input type="text" name = "signup_username"placeholder="Enter your name" required>
-              </div>
-             
-              <div class="input-box">
-                <i class="fas fa-lock"></i>
-                <input type="password" name = "signup_password" placeholder="Enter your password" required>
-              </div>
-              <div class="button input-box">
-                <input type="submit" value="Sumbit">
-              </div>
-              <div class="text sign-up-text">Already have an account? <label for="flip">Login now</label></div>
-            </div>
-      </form>
-    </div>
-    </div>
+            </form>
+          </div>
+        </div>
     </div>
   </div>
 </body>

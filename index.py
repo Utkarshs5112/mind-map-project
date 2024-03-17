@@ -1,56 +1,58 @@
-#Import Flask and JSON for backend
-from flask import Flask,render_template, request, redirect, session,jsonify,flash 
-import json 
+# Importing required modules
+from flask import Flask, render_template, request, redirect, session, jsonify
+import json
 import random
 
-#Creating a Flask app
+# Creating a Flask app
 app = Flask(__name__)
-#Create a secret key for sessions module
+
+# Create a secret key for sessions
 app.secret_key = "df86c319adcd8242593ce55f3d5cb8b2"
 
-#Loading data from external json file
+# Function to load user data from external JSON file
 def load_users():
     try: 
         with open('users.json', 'r') as file:
             return json.load(file)
     except FileNotFoundError:
         return {"users": [], "next_id": 1}
-    
+
+# Function to load case data from external JSON file
 def load_cases():
     try: 
         with open('cases.json', 'r') as file:
             return json.load(file)
     except FileNotFoundError:
         return {"cases": []}
-    
-    
 
-#Updating external json file with new data
+# Function to save user data to external JSON file
 def save_users(users_data):
-    with open('users.json','w') as file:
+    with open('users.json', 'w') as file:
         json.dump(users_data, file, indent=4)
 
-#Create unique id for every user for structuring in table in future
+# Function to generate a unique user ID
 def generate_user_id(users_data):
     user_id = users_data["next_id"]
-    users_data["next_id"] +=1
+    users_data["next_id"] += 1
     return user_id
 
-#Check if username already exists in our DB
-def is_username_unique(username,users_data):
+# Function to check if username is unique
+def is_username_unique(username, users_data):
     return not any(user['username'] ==  username for user in users_data['users'])
 
-#Home page routing
+# Home page routing
 @app.route("/")
 def hello_world():
-    #Check for existing sessions and if it exists redirect to dashboard if not show home page
+    # Check if user is logged in and redirect to dashboard if so
     if 'logged_in' in session and session['logged_in']:
         return redirect("/dashboard")
     else:
         return render_template('home.html')
 
+# Authentication routing
 @app.route("/authenticate", methods=["POST", "GET"])
 def authenticate():
+    # If user is already logged in, redirect to dashboard
     if 'logged_in' in session and session['logged_in']:
         return redirect('/dashboard')
     else:
@@ -85,10 +87,9 @@ def authenticate():
                     error = "Missing username or password"
             return render_template('authenticate.html', error=error)
         else:
-            # Clear error message when page is loaded initially
             return render_template('authenticate.html', error=None)
 
-#Dashboard page routing
+# Dashboard routing
 @app.route("/dashboard")
 def dashboard():
     if 'logged_in' in session and session['logged_in']:
@@ -96,46 +97,45 @@ def dashboard():
     else:
         return redirect("/authenticate")
 
+# Dashboard cases routing
 @app.route("/dashboard/cases")
 def dashboard_cases():
     if 'logged_in' in session and session['logged_in']:
         data = load_cases()
         random_case = random.choice(data["cases"])
-        return render_template("cases.html", description = random_case)
+        return render_template("cases.html", description=random_case)
     else:
         return redirect("/authenticate")
-    
+
+# Dashboard clues routing
 @app.route("/dashboard/clues")
 def dashboard_clues():
     if 'logged_in' in session and session['logged_in']:
         return render_template("clues.html")
     else:
         return redirect("/authenticate")
-    
-    
+
+# Dashboard suspects routing
 @app.route("/dashboard/suspect")
 def dashboard_suspects():
     if 'logged_in' in session and session['logged_in']:
         return render_template("suspect.html")
     else:
         return redirect("/authenticate")
-    
 
+# Dashboard timeline routing
 @app.route("/dashboard/timeline")
 def dashboard_timeline():
     if 'logged_in' in session and session['logged_in']:
         return render_template("timeline.html")
     else:
         return redirect("/authenticate")
-    
-    
-#Logout routing linked with a button
-@app.route("/logout",methods = ["POST"])
-def logout():
-    session.pop('logged_in',None)
-    return redirect("/authenticate")    
 
-JSON_FILE_PATH = 'static/clues.json'
+# Logout routing
+@app.route("/logout", methods=["POST"])
+def logout():
+    session.pop('logged_in', None)
+    return redirect("/authenticate")
 
 # Route to add a new clue
 @app.route('/add_clue', methods=['POST'])
@@ -144,18 +144,17 @@ def add_clue():
     new_clue = request.json
 
     # Load existing clues from the JSON file
-    with open(JSON_FILE_PATH, 'r') as file:
+    with open('static/clues.json', 'r') as file:
         data = json.load(file)
 
     # Append the new clue to the list of clues
     data['clues'].append(new_clue)
 
     # Write the updated data back to the JSON file
-    with open(JSON_FILE_PATH, 'w') as file:
+    with open('static/clues.json', 'w') as file:
         json.dump(data, file, indent=4)
 
     return jsonify({'message': 'Clue added successfully'}), 200
+
 if __name__ == "__main__":
     app.run(debug=True)
-
-
