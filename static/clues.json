@@ -49,6 +49,16 @@
             "clue": "Clue 10",
             "date": "2024-03-26",
             "category": "Category J"
+        },
+        {
+            "clue": "Clue 77",
+            "date": "1111-11-11",
+            "category": "Category Z"
+        },
+        {
+            "clue": "clue 54",
+            "date": "0008-08-08",
+            "category": "Food poisoning"
         }
     ]
 }

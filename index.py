@@ -134,5 +134,28 @@ def dashboard_timeline():
 def logout():
     session.pop('logged_in',None)
     return redirect("/authenticate")    
+
+JSON_FILE_PATH = 'static/clues.json'
+
+# Route to add a new clue
+@app.route('/add_clue', methods=['POST'])
+def add_clue():
+    # Get the data from the request
+    new_clue = request.json
+
+    # Load existing clues from the JSON file
+    with open(JSON_FILE_PATH, 'r') as file:
+        data = json.load(file)
+
+    # Append the new clue to the list of clues
+    data['clues'].append(new_clue)
+
+    # Write the updated data back to the JSON file
+    with open(JSON_FILE_PATH, 'w') as file:
+        json.dump(data, file, indent=4)
+
+    return jsonify({'message': 'Clue added successfully'}), 200
 if __name__ == "__main__":
     app.run(debug=True)
+
+

@@ -2,12 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style3.css') }}"> 
     <link rel="stylesheet" href="{{ url_for('static', filename='css/normalise.css') }}">   
     <title>case files</title>
-
 </head>
 <body>
     <div class="heading"> 
@@ -31,87 +30,140 @@
                 </div>
                 <div class="modal-body"></div>
                 <div class="modal-footer">
-                  <form action = "/logout" method="POST">
+                  <form action="/logout" method="POST">
                     <button type="submit" class="btn btn-primary">Logout</button>
-                    </form>                
-                  </div>
+                  </form>                
+                </div>
               </div>
             </div>
           </div>
-        
-        </div>
-    <div class="section">
-    <div class="row">
-        <div class="col-sm-2"><div class="Dashboard"> <h1> Case Details</h1></div>
-        <div class="b1"><a href="{{ url_for('dashboard_cases') }}"><button class="b">    case    </button></a></div>
-
-        <div class="b1"><a href="{{ url_for('dashboard_timeline') }}"><button class="b">timeline</button></a></div>
-        <div class="b1"><a href="{{ url_for('dashboard_clues') }}"><button class="b3">clues</button></a></div>
-        <div class="b1"><a href="{{ url_for('dashboard_suspects') }}"><button class="b">suspect</button></a></div>
-    </div>
-        <div class="col-sm-10">
-            <div class="heading2"><h1> Evidences so Far </h1></div>
-            <div class="row">
-              <div class="col-8col-sm-6" id="contents">
-                  <table >
-                    <thead>
-                        <th>Clues</th>
-                        <th>Date Added</th>
-                        <th>Category</th>
-                      </thead>
-                    <!-- Table data rows -->
-                    <tbody id = "table-body">
-
-                    </tbody>
-                </table>
+      </div>
+      <div class="section">
+        <div class="row">
+            <div class="col-sm-2">
+                <div class="Dashboard"> 
+                    <h1> Case Details</h1>
+                </div>
+                <div class="b1">
+                    <a href="{{ url_for('dashboard_cases') }}">
+                        <button class="b">Case</button>
+                    </a>
+                </div>
+                <div class="b1">
+                    <a href="{{ url_for('dashboard_timeline') }}">
+                        <button class="b">Timeline</button>
+                    </a>
+                </div>
+                <div class="b1">
+                    <a href="{{ url_for('dashboard_clues') }}">
+                        <button class="b3">Clues</button>
+                    </a>
+                </div>
+                <div class="b1">
+                    <a href="{{ url_for('dashboard_suspects') }}">
+                        <button class="b">Suspect</button>
+                    </a>
+                </div>
             </div>
-            <div class="col-4.col-sm-6"></div>
+            <div class="col-sm-10">
+                <div class="heading2"><h1> Add Clue </h1></div>
+                <form id="clueForm">
+                    <div class="mb-3">
+                        <label for="clueInput" class="form-label">Clue</label>
+                        <input type="text" class="form-control" id="clueInput" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="dateInput" class="form-label">Date</label>
+                        <input type="date" class="form-control" id="dateInput" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="categoryInput" class="form-label">Category</label>
+                        <input type="text" class="form-control" id="categoryInput" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add Clue</button>
+                </form>
+
+                <div class="heading2"><h1> Evidences so Far </h1></div>
+                <div class="row">
+                    <div class="col-8 col-sm-6" id="contents">
+                        <table>
+                            <thead>
+                                <th>Clues</th>
+                                <th>Date Added</th>
+                                <th>Category</th>
+                            </thead>
+                            <!-- Table data rows -->
+                            <tbody id="table-body">
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-4 col-sm-6"></div>
+                </div>
+                <div class="bottombutton"> 
+                    <a href="{{ url_for('dashboard_suspects') }}">
+                        <button class="b2">Show Suspect</button>
+                    </a>
+                </div>
+            </div>
         </div>
-            <div class="bottombutton"> <a href="{{ url_for('dashboard_suspects') }}"><button class="b2">Show Suspect</button></a></div>
+      </div>
 
-        
-    </div>
-    </div>
-    </div>
-    <script>
-  function populateTable() {
-    fetch('/static/clues.json')  // Use the generated URL directly
-        .then(response => response.json())
-        .then(data => {
-            console.log('Fetched data:', data); // Log the fetched data
-            const tableBody = document.querySelector('#table-body');
+      <script>
+          function populateTable() {
+              fetch('/static/clues.json')
+                  .then(response => response.json())
+                  .then(data => {
+                      console.log('Fetched data:', data);
+                      const tableBody = document.querySelector('#table-body');
+                      tableBody.innerHTML = '';
+                      data.clues.forEach(clue => {
+                          const row = document.createElement('tr');
+                          row.innerHTML = `
+                              <td>${clue.clue}</td>
+                              <td>${clue.date}</td>
+                              <td>${clue.category}</td>
+                          `;
+                          tableBody.appendChild(row);
+                      });
+                  })
+                  .catch(error => {
+                      console.error('Error fetching JSON data:', error);
+                  });
+          }
 
-            // Clear existing table rows
-            tableBody.innerHTML = '';
+          document.getElementById('clueForm').addEventListener('submit', function(event) {
+              event.preventDefault();
 
-            // Loop through JSON data and populate the table
-            data.clues.forEach(clue => {
-                const row = document.createElement('tr');
-                row.innerHTML = `
-                    <td>${clue.clue}</td>
-                    <td>${clue.date}</td>
-                    <td>${clue.category}</td>
-                `;
-                tableBody.appendChild(row);
-            });
-        })
-        .catch(error => {
-            console.error('Error fetching JSON data:', error);
-        });
-}
+              const clue = document.getElementById('clueInput').value;
+              const date = document.getElementById('dateInput').value;
+              const category = document.getElementById('categoryInput').value;
 
-// Call the function to populate the table when the page loads
-populateTable();
-</script>
+              const newClue = {
+                  clue: clue,
+                  date: date,
+                  category: category
+              };
 
+              fetch('/add_clue', {
+                  method: 'POST',
+                  headers: {
+                      'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify(newClue)
+              })
+              .then(response => {
+                  if (response.ok) {
+                      location.reload();
+                  } else {
+                      console.error('Failed to add clue');
+                  }
+              })
+              .catch(error => {
+                  console.error('Error adding clue:', error);
+              });
+          });
+
+          populateTable();
       </script>
-      
 
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
-  </script>
-  
-</body>
-</html>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6
