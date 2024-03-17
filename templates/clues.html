@@ -18,7 +18,7 @@
           <div class="head-center"> <h1>Begin the Adventure</h1></div>
           
           <div class="circle"><button type="button" class="log" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            <img src="static/images/238963.jpg" alt="Sherlock" background-size="cover">
+            <img src="{{ url_for('static', filename='images/login2.png') }}" alt="Your Photo">
           </button></div>
           
           <!-- Modal -->
@@ -52,28 +52,15 @@
             <div class="row">
               <div class="col-8col-sm-6" id="contents">
                   <table >
-                    <tr>
+                    <thead>
                         <th>Clues</th>
                         <th>Date Added</th>
                         <th>Category</th>
-                    </tr>
+                      </thead>
                     <!-- Table data rows -->
-                    <tr>
-                        <td>Data 1</td>
-                        <td>Data 2</td>
-                        <td>Data 3</td>
-                    </tr>
-                    <tr>
-                        <td>Data 4</td>
-                        <td>Data 5</td>
-                        <td>Data 6</td>
-                    </tr>
-                    <tr>
-                        <td>Data 7</td>
-                        <td>Data 8</td>
-                        <td><button type="button" class="btn btn-secondary" data-bs-toggle="popover" data-bs-placement="right" data-bs-custom-class="custom-popover" data-bs-title="Custom popover" data-bs-content="This popover is themed via CSS variables.">
-                        Data9</button></td>
-                      </tr>
+                    <tbody id = "table-body">
+
+                    </tbody>
                 </table>
             </div>
             <div class="col-4.col-sm-6"></div>
@@ -84,13 +71,45 @@
     </div>
     </div>
     </div>
-    
+    <script>
+  function populateTable() {
+    fetch('/static/clues.json')  // Use the generated URL directly
+        .then(response => response.json())
+        .then(data => {
+            console.log('Fetched data:', data); // Log the fetched data
+            const tableBody = document.querySelector('#table-body');
+
+            // Clear existing table rows
+            tableBody.innerHTML = '';
+
+            // Loop through JSON data and populate the table
+            data.clues.forEach(clue => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${clue.clue}</td>
+                    <td>${clue.date}</td>
+                    <td>${clue.category}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+        })
+        .catch(error => {
+            console.error('Error fetching JSON data:', error);
+        });
+}
+
+// Call the function to populate the table when the page loads
+populateTable();
+</script>
+
+      </script>
+      
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
- <script src = "static/js/script.js">
   </script>
+  
 </body>
 </html>

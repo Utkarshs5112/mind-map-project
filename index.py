@@ -22,6 +22,8 @@ def load_cases():
             return json.load(file)
     except FileNotFoundError:
         return {"cases": []}
+    
+    
 
 #Updating external json file with new data
 def save_users(users_data):
@@ -106,7 +108,8 @@ def dashboard_clues():
     if 'logged_in' in session and session['logged_in']:
         return render_template("clues.html")
     else:
-        return redirect("/dashboard")
+        return render_template('clues.html', data=clues_data)
+    return redirect("/dashboard")
     
 @app.route("/dashboard/suspect")
 def dashboard_suspects():
