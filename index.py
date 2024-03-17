@@ -1,5 +1,5 @@
 #Import Flask and JSON for backend
-from flask import Flask,render_template, request, redirect, session,jsonify
+from flask import Flask,render_template, request, redirect, session,jsonify,flash 
 import json 
 import random
 
@@ -49,7 +49,7 @@ def hello_world():
     else:
         return render_template('home.html')
 
-@app.route("/authenticate", methods = ["POST","GET"])
+@app.route("/authenticate", methods=["POST", "GET"])
 def authenticate():
     if 'logged_in' in session and session['logged_in']:
         return redirect('/dashboard')
@@ -65,26 +65,28 @@ def authenticate():
                         session['logged_in'] = True
                         return redirect("/dashboard")
                     else:
-                        return "Invalid username or password!"
+                        error = "Incorrect credentials"
                 else:
-                    return "MISSING"
+                    error = "Missing username or password"
             elif 'signup_username' in request.form and 'signup_password' in request.form:
                 name = request.form['signup_username']
                 password = request.form['signup_password']
                 if name and password:
                     users_data = load_users()
-                    if is_username_unique(name,users_data):
+                    if is_username_unique(name, users_data):
                         user_id = generate_user_id(users_data)
-                        new_user = {"id": user_id,"username":name,"password":password}
+                        new_user = {"id": user_id, "username": name, "password": password}
                         users_data['users'].append(new_user)
                         save_users(users_data)
                         return redirect("/login")
                     else:
-                        return "Username already exists"
+                        error = "Username already exists"
                 else:
-                    return "MISSING"
-        return render_template('authenticate.html')
-
+                    error = "Missing username or password"
+            return render_template('authenticate.html', error=error)
+        else:
+            # Clear error message when page is loaded initially
+            return render_template('authenticate.html', error=None)
 
 #Dashboard page routing
 @app.route("/dashboard")
@@ -92,7 +94,7 @@ def dashboard():
     if 'logged_in' in session and session['logged_in']:
         return redirect("/dashboard/cases")
     else:
-        return redirect("/login")
+        return redirect("/authenticate")
 
 @app.route("/dashboard/cases")
 def dashboard_cases():
@@ -101,22 +103,22 @@ def dashboard_cases():
         random_case = random.choice(data["cases"])
         return render_template("cases.html", description = random_case)
     else:
-        return redirect("/dashboard")
+        return redirect("/authenticate")
     
 @app.route("/dashboard/clues")
 def dashboard_clues():
     if 'logged_in' in session and session['logged_in']:
         return render_template("clues.html")
     else:
-        return render_template('clues.html', data=clues_data)
-    return redirect("/dashboard")
+        return redirect("/authenticate")
+    
     
 @app.route("/dashboard/suspect")
 def dashboard_suspects():
     if 'logged_in' in session and session['logged_in']:
         return render_template("suspect.html")
     else:
-        return redirect("/dashboard")
+        return redirect("/authenticate")
     
 
 @app.route("/dashboard/timeline")
@@ -124,13 +126,13 @@ def dashboard_timeline():
     if 'logged_in' in session and session['logged_in']:
         return render_template("timeline.html")
     else:
-        return redirect("/dashboard")
+        return redirect("/authenticate")
     
     
 #Logout routing linked with a button
 @app.route("/logout",methods = ["POST"])
 def logout():
     session.pop('logged_in',None)
-    return redirect("/login")    
+    return redirect("/authenticate")    
 if __name__ == "__main__":
     app.run(debug=True)
