@@ -1,20 +1,6 @@
 {
     "clues": [
-        {
-            "clue": "Clue 1",
-            "date": "2024-03-17",
-            "category": "Category A"
-        },
-        {
-            "clue": "Clue 2",
-            "date": "2024-03-18",
-            "category": "Category B"
-        },
-        {
-            "clue": "Clue 3",
-            "date": "2024-03-19",
-            "category": "Category C"
-        },
+    
         {
             "clue": "Clue 4",
             "date": "2024-03-20",
@@ -59,11 +45,6 @@
             "clue": "clue 54",
             "date": "0008-08-08",
             "category": "Food poisoning"
-        },
-        {
-            "clue": "clue 5",
-            "date": "2024-03-12",
-            "category": "fjajagajgag"
         }
     ]
 }

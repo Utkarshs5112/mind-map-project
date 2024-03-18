@@ -78,31 +78,34 @@
             </div>
             <!-- Main content -->
             <div class="col-sm-10">
+                <div class="row">
+                    <div class="col-8 col-sm-6" id="contents">
+                
                 <!-- Add Clue form -->
                 <div class="heading2"><h1> Add Clue </h1></div>
+                <div class="s">
                 <form id="clueForm">
-                    <div class="mb-3">
+                    <div class="search">
                         <label for="clueInput" class="form-label">Clue</label>
                         <input type="text" class="form-control" id="clueInput" required>
                     </div>
-                    <div class="mb-3">
+                    <div class="search">
                         <label for="dateInput" class="form-label">Date</label>
                         <input type="date" class="form-control" id="dateInput" required>
                     </div>
-                    <div class="mb-3">
+                    <div class="search">
                         <label for="categoryInput" class="form-label">Category</label>
                         <input type="text" class="form-control" id="categoryInput" required>
                     </div>
                     <button type="submit" class="btn btn-primary">Add Clue</button>
-                </form>
+                </form></div>
                 <!-- Evidences table -->
                 <div class="heading2"><h1> Evidences so Far </h1></div>
                 <!--<form class="search" action="/search" method="GET">
                     <input type="text" id="search" name="query" required placeholder="sort by description">
                       <div class="b4"><button type="submit"><img src="./css/images/search.png"></button></form>-->
-                
-                <div class="row">
-                    <div class="col-8 col-sm-6" id="contents">
+                    
+                    
                         <table>
                             <thead>
                                 <th>Clues</th>
@@ -114,8 +117,10 @@
                             </tbody>
                         </table>
                     </div>
+            </div>
                     <div class="col-4 col-sm-6"></div>
-                </div>
+                
+            
                 <!-- Button to show suspects -->
                 <div class="bottombutton"> 
                     <a href="{{ url_for('dashboard_suspects') }}">

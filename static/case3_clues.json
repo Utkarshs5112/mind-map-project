@@ -1,0 +1,34 @@
+{
+    "clues": [
+        {
+            "clue": "Clue 1",
+            "date": "2024-03-17",
+            "category": "Category A"
+        },
+        {
+            "clue": "Clue 2",
+            "date": "2024-03-18",
+            "category": "Category B"
+        },
+        {
+            "clue": "Clue 6",
+            "date": "2024-03-22",
+            "category": "Category F"
+        },
+        {
+            "clue": "Clue 7",
+            "date": "2024-03-23",
+            "category": "Category G"
+        },
+        {
+            "clue": "Clue 8",
+            "date": "2024-03-24",
+            "category": "Category H"
+        },
+        {
+            "clue": "Clue 9",
+            "date": "2024-03-25",
+            "category": "Category I"
+        }
+    ]
+}

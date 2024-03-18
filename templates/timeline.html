@@ -55,9 +55,9 @@
             <div class="col-sm-2">
                 <div class="Dashboard"> <h1> Case Details</h1></div>
                 <div class="b1"><a href="{{ url_for('dashboard_cases') }}"><button class="b">    case    </button></a></div>
-                <div class="b1"><a href="{{ url_for('dashboard_timeline') }}"><button class="b">timeline</button></a></div>
+                <div class="b1"><a href="{{ url_for('dashboard_timeline') }}"><button class="b3">timeline</button></a></div>
                 <div class="b1"><a href="{{ url_for('dashboard_clues') }}"><button class="b">clues</button></a></div>
-                <div class="b1"><a href="{{ url_for('dashboard_suspects') }}"><button class="b3">suspect</button></a></div>
+                <div class="b1"><a href="{{ url_for('dashboard_suspects') }}"><button class="b">suspect</button></a></div>
             </div>
             <!-- Main content -->
             <div class="col-sm-10">
@@ -69,9 +69,11 @@
                         <div class="time-cont">
                             <ul class="timeline" id="timeline"></ul>
                         </div>
+                        
                     </div>
                     <div class="col-4 col-sm-6"></div>
                 </div>
+                <div class="bottombutton"> <a href="clues.html"><button class="b2" >Show Clues</button></a></div>
             </div>
         </div>
     </div>

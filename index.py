@@ -2,6 +2,7 @@
 from flask import Flask, render_template, request, redirect, session, jsonify
 import json
 import random
+import os 
 
 # Creating a Flask app
 app = Flask(__name__)
@@ -39,6 +40,10 @@ def generate_user_id(users_data):
 # Function to check if username is unique
 def is_username_unique(username, users_data):
     return not any(user['username'] ==  username for user in users_data['users'])
+
+def read_file(filename):
+    with open(filename, 'r') as file:
+        return file.read()
 
 # Home page routing
 @app.route("/")
@@ -101,8 +106,10 @@ def dashboard():
 @app.route("/dashboard/cases")
 def dashboard_cases():
     if 'logged_in' in session and session['logged_in']:
-        data = load_cases()
-        random_case = random.choice(data["cases"])
+        case_files = ['case1.txt', 'case2.txt', 'case3.txt']
+        selected_file = random.choice(case_files)
+        selected_file_path = os.path.join('static', 'files', selected_file)  # Adjusted file path
+        random_case = read_file(selected_file_path)
         return render_template("cases.html", description=random_case)
     else:
         return redirect("/authenticate")
