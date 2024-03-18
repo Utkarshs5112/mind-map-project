@@ -156,5 +156,16 @@ def add_clue():
 
     return jsonify({'message': 'Clue added successfully'}), 200
 
+@app.route('/search')
+def search():
+    query = request.args.get('query')
+
+    with open('clues.json', 'r') as f:
+        clues = json.load(f)
+
+    filtered_clues = [clue for clue in clues['clues'] if query.lower() in clue['clue'].lower()]
+
+    return jsonify(filtered_clues)
+
 if __name__ == "__main__":
     app.run(debug=True)
