@@ -114,6 +114,17 @@ def dashboard_cases():
     else:
         return redirect("/authenticate")
 
+@app.route('/check_suspect', methods=['POST'])
+def check_suspect():
+    user_input = request.form.get('suspect', '').lower()  # Get user input from form
+    
+    # Check if user input contains "sherlock"
+    if 'sherlock' in user_input:
+        result_text = "You found the mastermind!"
+    else:
+        result_text = "You didn't get it."
+    
+    return render_template('suspect.html', result_text=result_text)  # Render template with updated result text
 # Dashboard clues routing
 @app.route("/dashboard/clues")
 def dashboard_clues():

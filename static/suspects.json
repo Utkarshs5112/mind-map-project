@@ -1,55 +1,149 @@
 {
     "suspects": [
-        {
-            "suspect": "Suspect 1",
-            "date": "2024-03-17",
-            "category": "Category A"
-        },
-        {
-            "suspect": "Suspect 2",
-            "date": "2024-03-18",
-            "category": "Category B"
-        },
-        {
-            "suspect": "Suspect 3",
-            "date": "2024-03-19",
-            "category": "Category C"
-        },
-        {
-            "suspect": "Suspect 4",
-            "date": "2024-03-20",
-            "category": "Category D"
-        },
-        {
-            "suspect": "Suspect 5",
-            "date": "2024-03-21",
-            "category": "Category E"
-        },
-        {
-            "suspect": "Suspect 6",
-            "date": "2024-03-22",
-            "category": "Category F"
-        },
-        {
-            "suspect": "Suspect 7",
-            "date": "2024-03-23",
-            "category": "Category G"
-        },
-        {
-            "suspect": "Suspect 8",
-            "date": "2024-03-24",
-            "category": "Category H"
-        },
-        {
-            "suspect": "Suspect 9",
-            "date": "2024-03-25",
-            "category": "Category I"
-        },
-        {
-            "suspect": "Suspect 10",
-            "date": "2024-03-26",
-            "category": "Category J"
-        }
+      {
+        "suspect": "Sherlock Holmes",
+        "profession": "Detective",
+        "date": "March 20, 1899",
+        "description": "Known for his sharp intellect and keen investigative skills."
+      },
+      {
+        "suspect": "Dr. John Watson",
+        "profession": "Assistant",
+        "date": "March 20, 1899",
+        "description": "Trusted companion and chronicler of Sherlock Holmes' adventures."
+      },
+      {
+        "suspect": "Museum Curator",
+        "profession": "Curator",
+        "date": "March 20, 1899",
+        "description": "In charge of security and preservation of the Emerald Mask, potentially involved in its disappearance."
+      },
+      {
+        "suspect": "Art Thief",
+        "profession": "Criminal",
+        "date": "March 21, 1899",
+        "description": "Mastermind behind various high-profile art thefts, suspected of orchestrating the mask's disappearance."
+      },
+      {
+        "suspect": "Museum Guard",
+        "profession": "Security Guard",
+        "date": "March 21, 1899",
+        "description": "On duty during the night of the theft, under scrutiny for any lapses in security."
+      },
+      {
+        "suspect": "Wealthy Collector",
+        "profession": "Collector",
+        "date": "March 21, 1899",
+        "description": "Known to have a fascination with historical artifacts, a potential buyer for the stolen mask."
+      },
+      {
+        "suspect": "Disgruntled Employee",
+        "profession": "Museum Staff",
+        "date": "March 21, 1899",
+        "description": "Employee with grievances against the museum, possibly seeking revenge through the theft."
+      },
+      {
+        "suspect": "Paranormal Enthusiast",
+        "profession": "Enthusiast",
+        "date": "March 22, 1899",
+        "description": "Believes in supernatural explanations, investigating the peculiar sightings near the museum."
+      },
+      {
+        "suspect": "Sherlock Holmes",
+        "profession": "Detective",
+        "date": "February 5, 1887",
+        "description": "Known for his brilliant deductive skills and solving intricate mysteries."
+      },
+      {
+        "suspect": "Dr. John Watson",
+        "profession": "Assistant",
+        "date": "February 5, 1887",
+        "description": "Trusted companion and chronicler of Sherlock Holmes' cases."
+      },
+      {
+        "suspect": "University Librarian",
+        "profession": "Librarian",
+        "date": "February 5, 1887",
+        "description": "Responsible for the manuscript's safekeeping, potentially involved in its disappearance."
+      },
+      {
+        "suspect": "Occult Scholar",
+        "profession": "Academician",
+        "date": "February 6, 1887",
+        "description": "Expert in ancient texts and occult knowledge, likely interested in the missing manuscript."
+      },
+      {
+        "suspect": "Research Professor",
+        "profession": "Academician",
+        "date": "February 6, 1887",
+        "description": "Studying the manuscript's contents, possibly holding valuable insights into its significance."
+      },
+      {
+        "suspect": "Envious Colleague",
+        "profession": "Academician",
+        "date": "February 6, 1887",
+        "description": "Suspected of harboring jealousy towards those studying the manuscript, potentially involved in its theft."
+      },
+      {
+        "suspect": "Paranormal Investigator",
+        "profession": "Investigator",
+        "date": "February 7, 1887",
+        "description": "Looking into the strange occurrences at the university, seeking to uncover any supernatural elements."
+      },
+      {
+        "suspect": "Inquisitive Student",
+        "profession": "Student",
+        "date": "February 7, 1887",
+        "description": "Known for delving into forbidden knowledge, potentially having access to the manuscript."
+      },
+      {
+        "suspect": "Sherlock Holmes",
+        "profession": "Detective",
+        "date": "January 15, 1892",
+        "description": "Notorious for his deductive reasoning and solving complex cases."
+      },
+      {
+        "suspect": "Dr. John Watson",
+        "profession": "Assistant",
+        "date": "January 15, 1892",
+        "description": "Trusted companion and chronicler of Sherlock Holmes' adventures."
+      },
+      {
+        "suspect": "Museum Curator",
+        "profession": "Curator",
+        "date": "January 15, 1892",
+        "description": "In charge of the Ebon Dagger exhibit at the museum, potentially involved in its disappearance."
+      },
+      {
+        "suspect": "Occultist",
+        "profession": "Occult Scholar",
+        "date": "January 18, 1892",
+        "description": "Suspected practitioner of the occult, possibly linked to the mystical properties of the Ebon Dagger."
+      },
+      {
+        "suspect": "Fortune Teller",
+        "profession": "Fortune Teller",
+        "date": "January 16, 1892",
+        "description": "Claims to have foreseen the dagger's theft and the ensuing murders, raising suspicion of premeditation."
+      },
+      {
+        "suspect": "Renowned Scholar",
+        "profession": "Academician",
+        "date": "January 16, 1892",
+        "description": "Expert in ancient symbols and artifacts, sought after for insights into the cryptic markings found."
+      },
+      {
+        "suspect": "Heir to a Rival Family",
+        "profession": "Aristocrat",
+        "date": "January 20, 1892",
+        "description": "Involved in a longstanding feud with the family owning the Ebon Dagger, a potential motive for theft."
+      },
+      {
+        "suspect": "Weather Scientist",
+        "profession": "Scientist",
+        "date": "January 20, 1892",
+        "description": "Investigating the unexplained weather anomalies, potentially tied to the supernatural aspects of the case."
+      }
     ]
-}
-
+  }
+  

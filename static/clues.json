@@ -1,69 +1,64 @@
 {
     "clues": [
-        {
-            "clue": "Clue 1",
-            "date": "2024-03-17",
-            "category": "Category A"
-        },
-        {
-            "clue": "Clue 2",
-            "date": "2024-03-18",
-            "category": "Category B"
-        },
-        {
-            "clue": "Clue 3",
-            "date": "2024-03-19",
-            "category": "Category C"
-        },
-        {
-            "clue": "Clue 4",
-            "date": "2024-03-20",
-            "category": "Category D"
-        },
-        {
-            "clue": "Clue 5",
-            "date": "2024-03-21",
-            "category": "Category E"
-        },
-        {
-            "clue": "Clue 6",
-            "date": "2024-03-22",
-            "category": "Category F"
-        },
-        {
-            "clue": "Clue 7",
-            "date": "2024-03-23",
-            "category": "Category G"
-        },
-        {
-            "clue": "Clue 8",
-            "date": "2024-03-24",
-            "category": "Category H"
-        },
-        {
-            "clue": "Clue 9",
-            "date": "2024-03-25",
-            "category": "Category I"
-        },
-        {
-            "clue": "Clue 10",
-            "date": "2024-03-26",
-            "category": "Category J"
-        },
-        {
-            "clue": "Clue 77",
-            "date": "1111-11-11",
-            "category": "Category Z"
-        },
-        {
-            "clue": "clue 54",
-            "date": "0008-08-08",
-            "category": "Food poisoning"
-        },
-        {
-            "clue": "clue 5",
-            "date": "2024-03-12",
-            "category": "fjajagajgag"
-        }
+    {
+    "clue": "An ancient manuscript, believed to hold secrets of great power, disappeared from a university library.",
+    "date": "1887-02-05",
+    "category": "Vanishing Manuscript"
+    },
+    {
+    "clue": "Mysterious symbols etched into the floor near the manuscript's display, hinting at its significance.",
+    "date": "1887-02-06",
+    "category": "Strange Symbols"
+    },
+    {
+    "clue": "Reports of strange phenomena occurring around the university, such as flickering lights and cold spots.",
+    "date": "1887-02-07",
+    "category": "Unexplained Phenomena"
+    },
+    {
+    "clue": "Multiple cases of sudden and unexplained illnesses among those who had access to the manuscript.",
+    "date": "1887-02-08",
+    "category": "Sudden Illnesses"
+    },
+    {
+    "clue": "The Ebon Dagger, a priceless artifact with rumored mystical properties, disappeared from a museum exhibit.",
+    "date": "1892-01-15",
+    "category": "Stolen Artifact"
+    },
+    {
+    "clue": "Cryptic symbols found at the scene of the artifact's theft, hinting at a possible motive or culprit.",
+    "date": "1892-01-16",
+    "category": "Cryptic Symbols"
+    },
+    {
+    "clue": "Series of bizarre murders involving victims found with strange markings resembling the dagger's symbols.",
+    "date": "1892-01-18",
+    "category": "Strange Murders"
+    },
+    {
+    "clue": "Unexplained weather anomalies coinciding with the theft and murders, suggesting supernatural influence.",
+    "date": "1892-01-20",
+    "category": "Unusual Weather"
+    },
+    {
+    "clue": "The Emerald Mask, a valuable historical artifact, vanished from a museum during a special exhibit.",
+    "date": "1899-03-20",
+    "category": "Stolen Artifact"
+    },
+    {
+    "clue": "Mysterious notes left behind by the thief, suggesting a deeper motive or hidden agenda.",
+    "date": "1899-03-21",
+    "category": "Enigmatic Notes"
+    },
+    {
+    "clue": "Reports of strange figures lurking near the museum on the night of the theft, adding to the mystery.",
+    "date": "1899-03-22",
+    "category": "Peculiar Sightings"
+    },
+    {
+    "clue": "Several museum employees and visitors went missing around the time of the artifact's theft.",
+    "date": "1899-03-23",
+    "category": "Unexplained Disappearances"
+    }
     ]
-}
+    }

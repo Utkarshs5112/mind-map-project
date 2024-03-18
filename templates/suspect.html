@@ -67,15 +67,20 @@
                             <thead> 
                                 <tr>
                                     <th>Suspect</th>
-                                    <th>Date Added</th>
-                                    <th>Category</th>
+                                    <th>Profession</th>
+                                    <th>First Met</th>
+                                    <th>Details</th>
                                 </tr>
                             </thead>
                             <tbody id="table-body"></tbody>
                         </table>
                         <label for="suspect">suspect according to you</label>
-                <input type="text" id="sus" name="suspect"><br><br>
-                <button class="b2" type="submit">Submit</button>
+                        <form id="suspectForm" action="{{ url_for('check_suspect') }}" method="POST">
+                            <input type="text" id="sus" name="suspect"><br><br>
+                            <button class="b2" type="submit">Submit</button>
+                        </form>
+                        <p id="resultText">{{ result_text }}</p>
+            <p id="result-text"></p>
                     </div>
                     <div class="col-4 col-sm-6"></div>
                 </div>
@@ -84,6 +89,7 @@
     </div>
     <!-- JavaScript to populate the table -->
     <script>
+        
         function populateTable() {
             fetch('/static/suspects.json')  // Fetch JSON data
                 .then(response => response.json())
@@ -99,8 +105,9 @@
                         const row = document.createElement('tr');
                         row.innerHTML = `
                             <td>${suspect.suspect}</td>
+                            <td>${suspect.profession}</td>
                             <td>${suspect.date}</td>
-                            <td>${suspect.category}</td>
+                            <td>${suspect.description}</td>
                         `;
                         tableBody.appendChild(row);
                     });
@@ -112,6 +119,8 @@
 
         // Call the function to populate the table when the page loads
         populateTable();
+       // Function to handle form submission
+    
     </script>
     <!-- Bootstrap and Popper.js scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
